@@ -3,7 +3,10 @@ pipeline {
   
 stages {
         stage('prepare') {
-        setupCommonPipelineEnvironment script:this
+          steps{
+                    checkout scm
+                    setupCommonPipelineEnvironment script:this
+          }
        }
     }
 
